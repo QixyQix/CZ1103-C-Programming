@@ -18,49 +18,46 @@ int main(){
     int studentId;
     int inputMark;
     char grade;
+
     while(1){
         printf("Enter student ID:\n");
         scanf("%d", &studentId);
 
-        switch(studentId){
-            case -1:
-                return 0;
-                break;
-            default:
-                grade = 'X';
-                printf("Enter mark:\n");
-                scanf("%d", &inputMark);
+        if(studentId == -1){
+            break;
+        }
 
-                if(inputMark >= 75 && inputMark <= 100)
-                {
-                    grade = 'A';
-                }
-                else if (inputMark >= 65 && inputMark <=74)
-                {
-                    grade = 'B';
-                }
-                else if (inputMark >= 55 && inputMark <= 64)
-                {
-                    grade = 'C';
-                }
-                else if (inputMark >= 45 && inputMark <= 54)
-                {
-                    grade = 'D';
-                }
-                else if (inputMark >= 44 && inputMark <= 0)
-                {
-                    grade = 'F';
-                }
-                else
-                {
-                    printf("Invalid mark. Mark must be between 0-100. Please try again.\n");
-                }
-                
-                if (grade != 'X'){
-                    printf("Grade = %c\n", grade);
-                }
+        grade = 'X';
+        printf("Enter mark:\n");
+        scanf("%d", &inputMark);
+        
+        switch (inputMark)
+        {
+        case 75 ... 100:
+            grade='A';
+            break;
+        case 65 ... 74:
+            grade='B';
+            break;
+        case 55 ... 64:
+            grade='C';
+            break;
+        case 45 ... 54:
+            grade='D';
+            break;
+        case 0 ... 44:
+            grade = 'F';
+            break;
+        default:
+            grade='X';
+            printf("Invalid mark. Mark must be between 0-100. Please try again.\n");
+            break;
+        }
 
+        if (grade != 'X'){
+            printf("Grade = %c\n", grade);
         }
     }
+    
     return 0;
 }
