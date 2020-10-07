@@ -8,7 +8,8 @@ int main(){
     printf("Enter number of lines:\n");
     scanf("%d",&noOfLines);
 
-    for(int i = 0; i<noOfLines; i++){
+    int i;
+    for(i = 0; i<noOfLines; i++){
         printf("Enter line %d:\n", i+1);
         int currentNumber = 0;
         int total = 0;

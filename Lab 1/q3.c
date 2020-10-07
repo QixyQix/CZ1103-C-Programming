@@ -10,8 +10,9 @@ program is called is given below. For example, pattern(2) will print the followi
 #include<stdio.h>
 void pattern(int height){
     printf("Pattern:\n");
-    for(int i =0; i<height; i++){
-        for(int j = 0; j<i+1; j++){
+    int i,j;
+    for(i =0; i<height; i++){
+        for(j = 0; j<i+1; j++){
             printf("%d",i+1);
         }
         printf("\n");
