@@ -106,7 +106,7 @@ starts from 1.If the required digit is not in the number, the function should re
 int digitPos1(int num,int digit){
     /*Writeyourcodehere*/
     int pos = 0;
-    while(1){
+    do{
         pos++;
         int currDigit = num%10;
         if(currDigit == digit){
@@ -115,7 +115,8 @@ int digitPos1(int num,int digit){
         else{
             num/=10;
         }
-    }
+    }while(num != 0);
+    return 0;
 }
 
 void digitPos2(int num,int digit,int *result){
